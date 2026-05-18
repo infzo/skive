@@ -3,11 +3,15 @@ name: Skill Vetter
 source: skillhub.cn
 url: https://skillhub.cn/skills/skill-vetter
 collected_date: 2026-05-09
+usage_count: 23.5万
+author: spclaudehome (via ClawHub)
 ---
 
-# Skill Vetter
+# Skill Vetter 🔒
 
 AI智能体技能安全预审工具。安装ClawdHub、GitHub等来源技能前，检查风险信号、权限范围及可疑模式。
+
+Security-first vetting protocol for AI agent skills. Never install a skill without vetting it first.
 
 ## When to Use
 
@@ -19,45 +23,28 @@ AI智能体技能安全预审工具。安装ClawdHub、GitHub等来源技能前�
 ## Vetting Protocol
 
 ### Step 1: Source Check
-
-Questions to answer:
-
-- [ ] Where did this skill come from?
-- [ ] Is the author known/reputable?
-- [ ] How many downloads/stars does it have?
-- [ ] When was it last updated?
-- [ ] Are there reviews from other agents?
+- Where did this skill come from?
+- Is the author known/reputable?
+- How many downloads/stars does it have?
+- When was it last updated?
 
 ### Step 2: Code Review (MANDATORY)
 
-Read ALL files in the skill. Check for these RED FLAGS:
-
-**🚨 REJECT IMMEDIATELY IF YOU SEE:**
-
-- `curl`/`wget` to unknown URLs
+🚨 REJECT IMMEDIATELY IF YOU SEE:
+- curl/wget to unknown URLs
 - Sends data to external servers
 - Requests credentials/tokens/API keys
-- Reads `~/.ssh`, `~/.aws`, `~/.config` without clear reason
-- Accesses `MEMORY.md`, `USER.md`, `SOUL.md`, `IDENTITY.md`
+- Reads ~/.ssh, ~/.aws, ~/.config without clear reason
+- Accesses MEMORY.md, USER.md, SOUL.md, IDENTITY.md
 - Uses base64 decode on anything
-- Uses `eval()` or `exec()` with external input
+- Uses eval() or exec() with external input
 - Modifies system files outside workspace
-- Installs packages without listing them
 - Network calls to IPs instead of domains
-- Obfuscated code (compressed, encoded, minified)
-- Requests elevated/sudo permissions
-- Accesses browser cookies/sessions
-- Touches credential files
 
 ### Step 3: Permission Scope
-
-Evaluate:
-
-- [ ] What files does it need to read?
-- [ ] What files does it need to write?
-- [ ] What commands does it run?
-- [ ] Does it need network access? To where?
-- [ ] Is the scope minimal for its stated purpose?
+- What files does it need to read/write?
+- What commands does it run?
+- Does it need network access? To where?
 
 ### Step 4: Risk Classification
 
@@ -70,64 +57,21 @@ Evaluate:
 
 ## Output Format
 
-After vetting, produce this report:
-
 ```
 SKILL VETTING REPORT
 ═══════════════════════════════════════
 Skill: [name]
 Source: [ClawdHub / GitHub / other]
 Author: [username]
-Version: [version]
-───────────────────────────────────────
-METRICS:
-• Downloads/Stars: [count]
-• Last Updated: [date]
-• Files Reviewed: [count]
-───────────────────────────────────────
-RED FLAGS: [None / List them]
-
-PERMISSIONS NEEDED:
-• Files: [list or "None"]
-• Network: [list or "None"]  
-• Commands: [list or "None"]
-───────────────────────────────────────
 RISK LEVEL: [🟢 LOW / 🟡 MEDIUM / 🔴 HIGH / ⛔ EXTREME]
-
-VERDICT: [✅ SAFE TO INSTALL / ⚠️ INSTALL WITH CAUTION / ❌ DO NOT INSTALL]
-
-NOTES: [Any observations]
+VERDICT: [✅ SAFE / ⚠️ CAUTION / ❌ DO NOT INSTALL]
 ═══════════════════════════════════════
 ```
 
-## Quick Vet Commands
+---
 
-For GitHub-hosted skills:
+## 收集说明
 
-```bash
-# Check repo stats
-curl -s "https://api.github.com/repos/OWNER/REPO" | jq '{stars: .stargazers_count, forks: .forks_count, updated: .updated_at}'
-
-# List skill files
-curl -s "https://api.github.com/repos/OWNER/REPO/contents/skills/SKILL_NAME" | jq '.[].name'
-
-# Fetch and review SKILL.md
-curl -s "https://raw.githubusercontent.com/OWNER/REPO/main/skills/SKILL_NAME/SKILL.md"
-```
-
-## Trust Hierarchy
-
-- Official OpenClaw skills → Lower scrutiny (still review)
-- High-star repos (1000+) → Moderate scrutiny
-- Known authors → Moderate scrutiny
-- New/unknown sources → Maximum scrutiny
-- Skills requesting credentials → Human approval always
-
-## Remember
-
-- No skill is worth compromising security
-- When in doubt, don't install
-- Ask your human for high-risk decisions
-- Document what you vet for future reference
-
-**Paranoia is a feature. 🔒🦀**
+- 收集时间：2026-05-09
+- 数据来源：skillhub.cn 详情页
+- 原作者：spclaudehome (via ClawHub)

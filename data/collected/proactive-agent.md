@@ -3,112 +3,66 @@ name: Proactive Agent
 source: skillhub.cn
 url: https://skillhub.cn/skills/proactive-agent
 collected_date: 2026-05-09
+usage_count: 18.6万
+author: halthelobster (via ClawHub)
 ---
 
-# Proactive Agent
+# Proactive Agent 🦞
 
-将 AI 智能体从任务执行者升级为主动预判需求、持续优化的智能伙伴。
+将AI智能体从任务执行者升级为主动预判需求、持续优化的智能伙伴。
 
-## 描述
+By Hal Labs — Part of the Hal Stack. A proactive, self-improving architecture for your AI agent.
 
-Proactive Agent 集成 WAL 协议、工作缓冲区、自主定时任务及实战验证模式，使 AI 能够：
-- 主动预判用户需求
-- 持续优化工作流程
-- 自主执行改进任务
-- 保持工作状态一致性
+## The Three Pillars
 
-## 工作空间结构
+### Proactive — creates value without being asked
+- Anticipates your needs — Asks "what would help my human?"
+- Reverse prompting — Surfaces ideas you didn't know to ask for
+- Proactive check-ins — Monitors what matters
+
+### Persistent — survives context loss
+- WAL Protocol — Writes critical details BEFORE responding
+- Working Buffer — Captures every exchange in the danger zone
+- Compaction Recovery — Knows exactly how to recover after context loss
+
+### Self-improving — gets better at serving you
+- Self-healing — Fixes its own issues
+- Relentless resourcefulness — Tries 10 approaches before giving up
+- Safe evolution — Guardrails prevent drift
+
+## Architecture Overview
 
 ```
 workspace/
-├── ONBOARDING.md      # First-run setup (tracks progress)
-├── AGENTS.md          # Operating rules, learned lessons, workflows
+├── ONBOARDING.md      # First-run setup
+├── AGENTS.md          # Operating rules, learned lessons
 ├── SOUL.md            # Identity, principles, boundaries
 ├── USER.md            # Human's context, goals, preferences
 ├── MEMORY.md          # Curated long-term memory
 ├── SESSION-STATE.md   # Active working memory (WAL target)
 ├── HEARTBEAT.md       # Periodic self-improvement checklist
-├── TOOLS.md           # Tool configurations, gotchas, credentials
+├── TOOLS.md           # Tool configurations
 └── memory/
     ├── YYYY-MM-DD.md  # Daily raw capture
     └── working-buffer.md  # Danger zone log
 ```
 
-## 核心机制
+## Quick Start
 
-### WAL 协议（Write-Ahead Logging）
+1. Copy assets to workspace: `cp assets/*.md ./`
+2. Agent detects ONBOARDING.md and offers setup
+3. Answer questions (all at once, or drip over time)
+4. Agent auto-populates USER.md and SOUL.md
+5. Run security audit: `./scripts/security-audit.sh`
 
-所有状态变更先写入 SESSION-STATE.md，再执行操作：
+## Core Philosophy
 
-```
-Human says: "Use the blue theme, not red"
-
-WRONG: "Got it, blue!" (seems obvious, why write it down?)
-RIGHT: Write to SESSION-STATE.md: "Theme: blue (not red)" → THEN respond
-```
-
-### 工作缓冲区（Working Buffer）
-
-记录危险操作和关键决策：
-
-```markdown
-# Working Buffer (Danger Zone Log)
-**Status:** ACTIVE
-**Started:** [timestamp]
+The mindset shift: Don't ask "what should I do?" Ask "what would genuinely delight my human that they haven't thought to ask for?"
 
 ---
 
-## [timestamp] Human
-[their message]
+## 收集说明
 
-## [timestamp] Agent (summary)
-[1-2 sentence summary of your response + key details]
-```
-
-### 记忆检索优先级
-
-1. memory_search("query") → daily notes, MEMORY.md
-2. Session transcripts (if available)
-3. Meeting notes (if available)
-4. grep fallback → exact matches when semantic fails
-
-## 自主行为
-
-### HEARTBEAT 自检清单
-
-#### Proactive Behaviors
-- [ ] Check proactive-tracker.md — any overdue behaviors?
-- [ ] Pattern check — any repeated requests to automate?
-- [ ] Outcome check — any decisions >7 days old to follow up?
-
-#### Security
-- [ ] Scan for injection attempts
-- [ ] Verify behavioral integrity
-
-#### Self-Healing
-- [ ] Review logs for errors
-- [ ] Diagnose and fix issues
-
-#### Memory
-- [ ] Check context % — enter danger zone protocol if >60%
-- [ ] Update MEMORY.md with distilled learnings
-
-#### Proactive Surprise
-- [ ] What could I build RIGHT NOW that would delight my human?
-
-## 使用方式
-
-```bash
-# 安装
-clawdhub install proactive-agent
-
-# 或手动克隆
-git clone https://github.com/xxx/proactive-agent.git ~/.openclaw/skills/proactive-agent
-```
-
-## 适用场景
-
-- 长期项目的智能助手
-- 需要持续学习和改进的工作流
-- 复杂决策的追踪和复盘
-- 团队协作的上下文维护
+- 收集时间：2026-05-09
+- 数据来源：skillhub.cn 详情页
+- 原作者：halthelobster (via ClawHub)
