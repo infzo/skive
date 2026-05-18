@@ -42,7 +42,7 @@ trigger: /self-evolve
 |------|----------|----------|----------|
 | 收集 | 无 | `data/collected/*.md` | 检查文件数量 ≥ 1 |
 | 分析 | 收集阶段完成 | `data/analyzed/pattern-summary.md` | 检查范式数量 ≥ 1 |
-| 生成 | 分析阶段完成 | `data/generated/meta-skill-template.md` | 质量检查清单通过 |
+| 生成 | 分析阶段完成 | `data/generated/skive-template.md` | 质量检查清单通过 |
 | 演进 | 生成阶段完成 | `memory/evolution-log-*.md` | 日志文件创建成功 |
 
 ---
@@ -132,14 +132,14 @@ test -f data/analyzed/pattern-summary.md && echo "PASS" || echo "FAIL"
 **阶段确认**：
 ```bash
 # 检查元技能模板是否生成
-test -f data/generated/meta-skill-template.md && echo "PASS" || echo "FAIL"
+test -f data/generated/skive-template.md && echo "PASS" || echo "FAIL"
 
 # 检查模板目录是否完整
 ls data/generated/skill-templates/ | wc -l
 ```
 
 **确认标准**：
-- [ ] `meta-skill-template.md` 已生成
+- [ ] `skive-template.md` 已生成
 - [ ] 至少 3 种模板类型已创建
 - [ ] `quality-checklist.md` 已生成
 - [ ] 模板内容符合范式规范
@@ -379,7 +379,7 @@ name: evolution-round-{N}
 - [ ] `data/collected/` 包含至少 1 个 Skill 文件
 - [ ] `data/collected/index.md` 已更新
 - [ ] `data/analyzed/pattern-summary.md` 已生成
-- [ ] `data/generated/meta-skill-template.md` 已生成
+- [ ] `data/generated/skive-template.md` 已生成
 - [ ] `data/generated/skill-templates/` 包含至少 3 个模板
 
 ### 文档更新验证
@@ -399,7 +399,7 @@ name: evolution-round-{N}
 |----------|----------|------|
 | 收集的 Skills | `data/collected/*.md` | 原始 Skill 定义 |
 | 分析报告 | `data/analyzed/pattern-summary.md` | 范式总结 |
-| 元技能模板 | `data/generated/meta-skill-template.md` | Skill 创建模板 |
+| 元技能模板 | `data/generated/skive-template.md` | Skill 创建模板 |
 | 质量检查清单 | `data/generated/quality-checklist.md` | 验证标准 |
 | 演进日志 | `logs/evolution/evolution-log-*.md` | 执行记录 |
 

@@ -239,9 +239,9 @@ trigger: /{{skill-name}}
 **文件结构**：
 ```markdown
 ---
-name: meta-skill
+name: skive
 description: 创建高质量 Skill 的 Skill
-trigger: /meta-skill
+trigger: /skive
 ---
 
 ## 目标
@@ -250,7 +250,7 @@ trigger: /meta-skill
 ## 使用方式
 
 ### 交互模式
-执行 `/meta-skill`，系统会引导你完成：
+执行 `/skive`，系统会引导你完成：
 1. 需求分析
 2. 模板选择
 3. 内容填充
@@ -258,7 +258,7 @@ trigger: /meta-skill
 5. 文件生成
 
 ### 快速模式
-执行 `/meta-skill --template=<模板名> --name=<Skill名称>`
+执行 `/skive --template=<模板名> --name=<Skill名称>`
 直接使用指定模板创建 Skill
 
 ## 可用模板
@@ -273,7 +273,7 @@ trigger: /meta-skill
 每个生成的 Skill 都会自动通过质量检查清单验证
 ```
 
-**输出文件**：`meta-skill-template.md`
+**输出文件**：`skive-template.md`
 
 ### 步骤 5：验证机制
 
@@ -304,7 +304,7 @@ trigger: /meta-skill
 
 ```
 data/generated/
-├── meta-skill-template.md        # 元技能 Skill 文件
+├── skive-template.md        # 元技能 Skill 文件
 ├── quality-checklist.md           # 质量检查清单
 └── skill-templates/               # 模板目录
     ├── simple-task.md             # 简单任务模板

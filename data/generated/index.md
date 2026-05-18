@@ -8,7 +8,7 @@
 
 | 序号 | 名称 | 生成日期 | 基于分析版本 |
 |------|------|----------|--------------|
-| 1 | Meta-Skill 模板 | 2026-05-09 | pattern-summary.md v1 |
+| 1 | Skive 模板 | 2026-05-09 | pattern-summary.md v1 |
 | 2 | 简单任务模板 | 2026-05-09 | pattern-summary.md v1 |
 | 3 | 工作流模板 | 2026-05-09 | pattern-summary.md v1 |
 | 4 | 复杂系统模板 | 2026-05-09 | pattern-summary.md v1 |
@@ -28,7 +28,7 @@
 
 ```
 data/generated/
-├── meta-skill-template.md        # 元技能 Skill 文件
+├── skive-template.md        # 元技能 Skill 文件
 ├── quality-checklist.md           # 质量检查清单
 ├── index.md                       # 本索引文件
 └── skill-templates/               # 模板目录

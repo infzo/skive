@@ -1,10 +1,10 @@
 ---
-name: meta-skill
+name: skive
 description: 创建高质量 Skill 的 Skill
-trigger: /meta-skill
+trigger: /skive
 ---
 
-# Meta-Skill
+# Skive
 
 帮助用户快速创建符合最佳实践的高质量 Skill。
 
@@ -16,7 +16,7 @@ trigger: /meta-skill
 
 ### 交互模式
 
-执行 `/meta-skill`，系统会引导你完成：
+执行 `/skive`，系统会引导你完成：
 1. 需求分析
 2. 模板选择
 3. 内容填充
@@ -25,7 +25,7 @@ trigger: /meta-skill
 
 ### 快速模式
 
-执行 `/meta-skill --template=<模板名> --name=<Skill名称>`
+执行 `/skive --template=<模板名> --name=<Skill名称>`
 
 直接使用指定模板创建 Skill
 
@@ -35,19 +35,19 @@ trigger: /meta-skill
 
 适用于：单一明确任务、步骤少于 5 步
 
-**使用**：`/meta-skill --template=simple --name=<名称>`
+**使用**：`/skive --template=simple --name=<名称>`
 
 ### 2. workflow（工作流模板）
 
 适用于：多阶段任务、需要条件判断、步骤 5-10 步
 
-**使用**：`/meta-skill --template=workflow --name=<名称>`
+**使用**：`/skive --template=workflow --name=<名称>`
 
 ### 3. complex（复杂系统模板）
 
 适用于：企业级应用、需要详细文档、长期维护
 
-**使用**：`/meta-skill --template=complex --name=<名称>`
+**使用**：`/skive --template=complex --name=<名称>`
 
 ## 创建流程
 
